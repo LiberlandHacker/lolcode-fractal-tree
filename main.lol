@@ -4,6 +4,9 @@ I HAS A LENGTH ITZ 60
 I HAS A ANGLE ITZ 25.7
 I HAS A LEVEL ITZ 4
 
+BTW this code is an experiment. 
+BTW thanks to ChatGPT for help! 😸 --Jonathan
+
 HOW IZ I TREE (LEVEL, LENGTH)
     VISIBLE "| " * LEVEL + " +--" + " " * LEVEL + "O"
     IF LEVEL > 0
@@ -29,7 +32,7 @@ HOW IZ I LEFT (ANGLE, LEVEL, LENGTH)
     HOW IZ I TREE (LEVEL - 1, NEWLENGTH)
     HOW IZ I TURN (NEWANGLE)
     KTHX
-HOW IZ I TURN (ANGLE)
+HOW IZ I TURN (ANGLE, LEVEL)
     VISIBLE "| " * (LEVEL + 1) + " " * LEVEL + "\\" + " " * LEVEL + " " * LEVEL + "|"
     I HAS A PI ITZ 3.141592654
     I HAS A RAD ITZ ANGLE * PI / 180
@@ -51,7 +54,7 @@ HOW IZ I TURN (ANGLE)
     VISIBLE "| " * LEVEL + " " * LEVEL + " " * LEVEL + "/" + " " * LEVEL + " " * LEVEL + "|"
     VISIBLE "| " * (LEVEL + 1) + " " * LEVEL + "/" + " " * LEVEL + " " * LEVEL + "|"
     VISIBLE "| " * LEVEL + " " * LEVEL + " " * LEVEL + "|"
-    I HAS A NEWCOORDS ITZ "X " + MOVEX + " Y " + MOVEY
+    I HAS A NEWCOORDS ITZ "X " + STR(MOVEX) + " Y " + STR(MOVEY)
     VISIBLE "| " * (LEVEL + 1) + " " * LEVEL + " " * LEVEL + "|" + NEWCOORDS
     I HAS A NEWX ITZ X + MOVEX
     I HAS A NEWY ITZ Y + MOVEY
@@ -63,7 +66,7 @@ HOW IZ I TURN (ANGLE)
     I HAS A Y ITZ LENGTH * COSR
     I HAS A MOVEX ITZ X - NEWX
     I HAS A MOVEY ITZ Y - NEWY
-    I HAS A NEWCOORDS ITZ "X " + MOVEX + " Y " + MOVEY
+    I HAS A NEWCOORDS ITZ "X " + STR(MOVEX) + " Y " + STR(MOVEY)
     VISIBLE "| " * LEVEL + " " * LEVEL + " " * LEVEL + "\\" + " " * LEVEL + " " * LEVEL + "|" + NEWCOORDS
     KTHX
 HOW IZ I MAIN
